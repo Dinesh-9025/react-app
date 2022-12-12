@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -15,7 +14,7 @@ function App() {
       navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         .then(function (stream) {
           console.log("stream", stream);
-          // sessionStorage.setItem("id", stream.id)
+          sessionStorage.setItem("id", stream.id)
           video.srcObject = stream;
           audio.srcObject = stream;
         })
@@ -41,7 +40,6 @@ function App() {
       </div>
       <div>
         <button id="button" onClick={() => StartStreaming()}>Start Video</button>
-        {/* <button id="button" onClick={(e: any) => stop(e)}>stop</button> */}
       </div>
 
     </div>
