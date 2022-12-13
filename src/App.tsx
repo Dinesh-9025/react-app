@@ -24,10 +24,10 @@ function App() {
     }
   }
 
-  function stop(e: any) {
-    console.log("e", e) 
+  // function stop(e: any) {
+  //   console.log("e", e) 
 
-  }
+  // }
 
   return (
     <div className="App">
