@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "src",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,7 +8,7 @@
     ],
     "rewrites": [
       {
-        "source": "src",
+        "source": "**",
         "destination": "/index.tsx"
       }
     ]
