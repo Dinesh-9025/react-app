@@ -8,8 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "src",
-        "destination": "/index.tsx"
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
