@@ -37,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>web-cam</h1>
 
       <div className='body'>
         <video autoPlay={autoPlay} id="videoElement">
