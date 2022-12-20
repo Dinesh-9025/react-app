@@ -1,11 +1,15 @@
-
-.button-group, .play-area {
+.button-group,
+.play-area {
   border: 1px solid grey;
   padding: 1em 1%;
   margin-bottom: 1em;
 }
 
 .button {
+  background-color: seagreen;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
   padding: 0.5em;
   margin-right: 1em;
 }

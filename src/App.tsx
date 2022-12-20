@@ -33,20 +33,21 @@ function App() {
 
   // }
 
-  var stream: any = document.querySelector("#stream");
-  var capture: any = document.querySelector("#capture");
-  var snapshot: any = document.querySelector("#snapshot");
+
+
+
 
   var cameraStream: any = null;
 
- 
+
   function startStreaming() {
+    var stream: any = document.querySelector("#stream");
 
-    var mediaSupport = 'mediaDevices' in navigator;
+    var mediaSupport: any = 'mediaDevices' in navigator;
+
     if (mediaSupport && null == cameraStream) {
-
       navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-        .then(function (mediaStream) {
+        .then(function (mediaStream: any) {
           cameraStream = mediaStream;
           stream.srcObject = mediaStream;
           stream.play();
@@ -66,7 +67,11 @@ function App() {
 
   // Stop Streaming
   function stopStreaming() {
-   
+    var stream: any = document.querySelector("#stream");
+    var capture: any = document.querySelector("#capture");
+    var snapshot: any = document.querySelector("#snapshot");
+
+
     if (null != cameraStream) {
       console.log("stoped")
       var track: any = cameraStream.getTracks()[0];
@@ -78,7 +83,11 @@ function App() {
   }
 
   function captureSnapshot() {
-    
+    var stream: any = document.querySelector("#stream");
+    var capture: any = document.querySelector("#capture");
+    var snapshot: any = document.querySelector("#snapshot");
+
+
     if (null != cameraStream) {
       console.log("screen-shot");
       var ctx: any = capture.getContext('2d');
@@ -87,7 +96,7 @@ function App() {
       ctx.drawImage(stream, 0, 0, capture.width, capture.height);
 
       img.src = capture.toDataURL("image/png");
-      img.width = 240;
+      img.width = 480;
 
       snapshot.innerHTML = '';
       snapshot.appendChild(img);
