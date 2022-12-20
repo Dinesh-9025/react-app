@@ -38,23 +38,30 @@
   }
 }
 
-body {
+.button-group, .play-area {
+  border: 1px solid grey;
+  padding: 1em 1%;
+  margin-bottom: 1em;
+}
+
+.button {
+  padding: 0.5em;
+  margin-right: 1em;
+}
+
+.play-area-sub {
+  width: 47%;
+  padding: 1em 1%;
+  display: inline-block;
   text-align: center;
 }
 
-#videoElement {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  width: 800px;
-  height: 800px;
-  margin: 20px;
+#capture {
+  display: none;
 }
 
-button {
-  margin-top: 20;
-  padding: 5px;
-  background-color: seagreen;
-  color: white;
-  border-radius: 3px;
-  font-weight: bold;
+#snapshot {
+  display: inline-block;
+  width: 320px;
+  height: 240px;
 }
