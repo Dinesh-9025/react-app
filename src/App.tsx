@@ -1,9 +1,10 @@
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
 
-  var cameraStream: any = null;
+  // var cameraStream: any = null;
+  const [cameraStream, setCamerStream] = useState<any>(null)
 
 
   function startStreaming() {
@@ -14,7 +15,7 @@ function App() {
     if (mediaSupport && null == cameraStream) {
       navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         .then(function (mediaStream: any) {
-          cameraStream = mediaStream;
+          setCamerStream(mediaStream)
           stream.srcObject = mediaStream;
           stream.play();
           console.log("camerStream2", cameraStream)
@@ -41,7 +42,7 @@ function App() {
       track.stop();
       stream.load();
 
-      cameraStream = null;
+      setCamerStream(null)
     }
   }
 
@@ -51,7 +52,7 @@ function App() {
     var snapshot: any = document.querySelector("#snapshot");
 
 
-    if (null != cameraStream) {
+    if (cameraStream != null) {
       console.log("screen-shot");
       var ctx: any = capture.getContext('2d');
       var img: any = new Image();
@@ -84,8 +85,9 @@ function App() {
       <div className="button-group">
         <button id='btn-start' onClick={startStreaming} type="button" className="button">Start Streaming</button>
         <button id='btn-stop' onClick={stopStreaming} type="button" className="button">Stop Streaming</button>
-        <button id='btn-capture' onClick={captureSnapshot} type="button" className="button">Capture Image</button>
-      </div>
+        {cameraStream != null &&
+          <button id='btn-capture' onClick={captureSnapshot} type="button" className="button">Capture Image</button>
+        }</div>
     </div >
   );
 }
