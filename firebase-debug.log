@@ -1,0 +1,87 @@
+[debug] [2022-12-20T11:11:40.259Z] ----------------------------------------------------------------------
+[debug] [2022-12-20T11:11:40.260Z] Command:       /Users/qa/.nvm/versions/node/v16.18.1/bin/node /Users/qa/.nvm/versions/node/v16.18.1/bin/firebase deploy
+[debug] [2022-12-20T11:11:40.260Z] CLI Version:   11.19.0
+[debug] [2022-12-20T11:11:40.261Z] Platform:      darwin
+[debug] [2022-12-20T11:11:40.261Z] Node Version:  v16.18.1
+[debug] [2022-12-20T11:11:40.262Z] Time:          Tue Dec 20 2022 16:41:40 GMT+0530 (India Standard Time)
+[debug] [2022-12-20T11:11:40.262Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-20T11:11:40.315Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-20T11:11:40.315Z] > authorizing via signed-in user (dineshcareer4@gmail.com)
+[debug] [2022-12-20T11:11:40.315Z] [iam] checking project web-cam-41322 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-20T11:11:40.317Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/web-cam-41322:testIamPermissions [none]
+[debug] [2022-12-20T11:11:40.317Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/web-cam-41322:testIamPermissions x-goog-quota-user=projects/web-cam-41322
+[debug] [2022-12-20T11:11:40.317Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/web-cam-41322:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-20T11:11:40.779Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/web-cam-41322:testIamPermissions 200
+[debug] [2022-12-20T11:11:40.779Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/web-cam-41322:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-20T11:11:40.780Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/web-cam-41322 [none]
+[debug] [2022-12-20T11:11:41.306Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/web-cam-41322 200
+[debug] [2022-12-20T11:11:41.306Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/web-cam-41322 {"projectId":"web-cam-41322","projectNumber":"463136215985","displayName":"web-cam","name":"projects/web-cam-41322","resources":{"hostingSite":"web-cam-41322","realtimeDatabaseInstance":"web-cam-41322-default-rtdb"},"state":"ACTIVE","etag":"1_7bfab0d4-5323-4b29-9c37-eadcf4f9ef51"}
+[info] 
+[info] === Deploying to 'web-cam-41322'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-12-20T11:11:41.310Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions [none]
+[debug] [2022-12-20T11:11:41.310Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-12-20T11:11:42.673Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions 200
+[debug] [2022-12-20T11:11:42.673Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions {"name":"projects/463136215985/sites/web-cam-41322/versions/365e58cdb10a3005","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[web-cam-41322]: beginning deploy... 
+[info] i  hosting[web-cam-41322]: found 14 files in build 
+[debug] [2022-12-20T11:11:42.681Z] [hosting] uploading with 200 concurrency
+[debug] [2022-12-20T11:11:42.768Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-12-20T11:11:42.768Z] [hosting][hash queue][FINAL] {"max":72,"min":7,"avg":13.071428571428571,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":76}
+[debug] [2022-12-20T11:11:42.769Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/463136215985/sites/web-cam-41322/versions/365e58cdb10a3005:populateFiles [none]
+[debug] [2022-12-20T11:11:42.769Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/463136215985/sites/web-cam-41322/versions/365e58cdb10a3005:populateFiles {"files":{"/asset-manifest.json":"11200748830941a0afeb9561f5599df824f3c7f9f02639a707177e6af14e55fd","/index.html":"0f7e71192206cbdfce2b5219bfddd049d8e7b049003d1d17030579bb94085f3a","/logo512.png":"191fc21360b4ccfb1cda11a1efb97f489ed22672ca83f4064316802bbfdd750e","/favicon.ico":"b72f7455f00e4e58792d2bca892abb068e2213838c0316d6b7a0d6d16acd1955","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/logo192.png":"caff018b7f1e8fd481eb1c50d75b0ef236bcd5078b1d15c8bb348453fee30293","/static/css/main.5d86b822.css":"d22ea711aa58138bb8e0a15cf1591c1d8b049cc4e3bf2faf0c38eb824726490f","/static/css/main.5d86b822.css.map":"666c36a7294d75a75214e5d157053797d398f55b873ef0ffd763a4a8f162ca8e","/manifest.json":"341d52628782f8ac9290bbfc43298afccb47b7cbfcee146ae30cf0f46bc30900","/static/js/787.28cb0dcd.chunk.js":"a3d172e04cf249ad0b62a0f05dad868b8eccdbc49ce21ce9ad075ef01cd25097","/static/js/main.e8e74c90.js.LICENSE.txt":"2e0317bf47c29fb7d0485a53b66ae8cb58c98d0cbaf239efac64dd310dfdabda","/static/js/787.28cb0dcd.chunk.js.map":"3f1ab88cd0f2be847d6c2ac7516e833b1c7eb086b165c22919c337490430d3c1","/static/js/main.e8e74c90.js":"ba1569f0bc264c4196ce974b6afed068502a11de88d9a32c0f6eb6b94b7d4bc1","/static/js/main.e8e74c90.js.map":"db0466cecb3a3306d46cceb4f7eb0353c06c3cbe08c08165bc6636eec794fde8"}}
+[debug] [2022-12-20T11:11:43.758Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/463136215985/sites/web-cam-41322/versions/365e58cdb10a3005:populateFiles 200
+[debug] [2022-12-20T11:11:43.758Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/463136215985/sites/web-cam-41322/versions/365e58cdb10a3005:populateFiles {"uploadRequiredHashes":["d22ea711aa58138bb8e0a15cf1591c1d8b049cc4e3bf2faf0c38eb824726490f","11200748830941a0afeb9561f5599df824f3c7f9f02639a707177e6af14e55fd","666c36a7294d75a75214e5d157053797d398f55b873ef0ffd763a4a8f162ca8e","0f7e71192206cbdfce2b5219bfddd049d8e7b049003d1d17030579bb94085f3a"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files"}
+[debug] [2022-12-20T11:11:43.759Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/d22ea711aa58138bb8e0a15cf1591c1d8b049cc4e3bf2faf0c38eb824726490f [none]
+[debug] [2022-12-20T11:11:43.759Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/d22ea711aa58138bb8e0a15cf1591c1d8b049cc4e3bf2faf0c38eb824726490f [stream]
+[debug] [2022-12-20T11:11:43.760Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/11200748830941a0afeb9561f5599df824f3c7f9f02639a707177e6af14e55fd [none]
+[debug] [2022-12-20T11:11:43.760Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/11200748830941a0afeb9561f5599df824f3c7f9f02639a707177e6af14e55fd [stream]
+[debug] [2022-12-20T11:11:43.760Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/666c36a7294d75a75214e5d157053797d398f55b873ef0ffd763a4a8f162ca8e [none]
+[debug] [2022-12-20T11:11:43.760Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/666c36a7294d75a75214e5d157053797d398f55b873ef0ffd763a4a8f162ca8e [stream]
+[debug] [2022-12-20T11:11:43.761Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/0f7e71192206cbdfce2b5219bfddd049d8e7b049003d1d17030579bb94085f3a [none]
+[debug] [2022-12-20T11:11:43.761Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/0f7e71192206cbdfce2b5219bfddd049d8e7b049003d1d17030579bb94085f3a [stream]
+[debug] [2022-12-20T11:11:43.762Z] [hosting][populate queue][FINAL] {"max":992,"min":992,"avg":992,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":995}
+[debug] [2022-12-20T11:11:43.762Z] [hosting] uploads queued: 4
+[debug] [2022-12-20T11:11:45.190Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/11200748830941a0afeb9561f5599df824f3c7f9f02639a707177e6af14e55fd 200
+[debug] [2022-12-20T11:11:45.190Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/11200748830941a0afeb9561f5599df824f3c7f9f02639a707177e6af14e55fd [stream]
+[debug] [2022-12-20T11:11:45.744Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/666c36a7294d75a75214e5d157053797d398f55b873ef0ffd763a4a8f162ca8e 200
+[debug] [2022-12-20T11:11:45.744Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/666c36a7294d75a75214e5d157053797d398f55b873ef0ffd763a4a8f162ca8e [stream]
+[debug] [2022-12-20T11:11:46.418Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/0f7e71192206cbdfce2b5219bfddd049d8e7b049003d1d17030579bb94085f3a 200
+[debug] [2022-12-20T11:11:46.419Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/0f7e71192206cbdfce2b5219bfddd049d8e7b049003d1d17030579bb94085f3a [stream]
+[debug] [2022-12-20T11:11:46.446Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/d22ea711aa58138bb8e0a15cf1591c1d8b049cc4e3bf2faf0c38eb824726490f 200
+[debug] [2022-12-20T11:11:46.446Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/web-cam-41322/versions/365e58cdb10a3005/files/d22ea711aa58138bb8e0a15cf1591c1d8b049cc4e3bf2faf0c38eb824726490f [stream]
+[debug] [2022-12-20T11:11:46.446Z] [hosting][upload queue][FINAL] {"max":2688,"min":1432,"avg":2191.25,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":2688}
+[info] ✔  hosting[web-cam-41322]: file upload complete 
+[debug] [2022-12-20T11:11:46.447Z] [hosting] deploy completed after 3772ms
+[debug] [2022-12-20T11:11:46.449Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "web-cam-41322"
+    },
+    "version": "projects/463136215985/sites/web-cam-41322/versions/365e58cdb10a3005"
+  }
+]
+[info] i  hosting[web-cam-41322]: finalizing version... 
+[debug] [2022-12-20T11:11:46.450Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions/365e58cdb10a3005 updateMask=status%2Cconfig
+[debug] [2022-12-20T11:11:46.451Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions/365e58cdb10a3005 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2022-12-20T11:11:47.650Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions/365e58cdb10a3005 200
+[debug] [2022-12-20T11:11:47.650Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/versions/365e58cdb10a3005 {"name":"projects/463136215985/sites/web-cam-41322/versions/365e58cdb10a3005","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-20T11:12:28.949574Z","createUser":{"email":"dineshcareer4@gmail.com"},"finalizeTime":"2022-12-20T11:12:34.329963Z","finalizeUser":{"email":"dineshcareer4@gmail.com"}}
+[debug] [2022-12-20T11:11:47.650Z] [hosting] finalized version for web-cam-41322:[object Object]
+[info] ✔  hosting[web-cam-41322]: version finalized 
+[info] i  hosting[web-cam-41322]: releasing new version... 
+[debug] [2022-12-20T11:11:47.651Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/channels/live/releases versionName=projects%2F463136215985%2Fsites%2Fweb-cam-41322%2Fversions%2F365e58cdb10a3005
+[debug] [2022-12-20T11:11:47.651Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/web-cam-41322/channels/live/releases {}
