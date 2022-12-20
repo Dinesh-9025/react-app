@@ -60,6 +60,7 @@ function App() {
 
       img.src = capture.toDataURL("image/png");
       img.width = 480;
+      img.height = 250;
 
       snapshot.innerHTML = '';
       snapshot.appendChild(img);
@@ -68,17 +69,14 @@ function App() {
 
   return (
     <div>
-
-
-      {/* Video Element & Canvas  */}
       <div className="play-area">
         <div className="play-area-sub">
           <h3>The Stream</h3>
-          <video id="stream" width="320" height="240"></video>
+          <video id="stream" width="1500" height="500"></video>
         </div>
         <div className="play-area-sub">
           <h3>The Capture</h3>
-          <canvas id="capture" width="320" height="240"></canvas>
+          <canvas id="capture" width="1500" height="500"></canvas>
           <div id="snapshot"></div>
         </div>
       </div>
