@@ -23,23 +23,19 @@
 }
 
 #capture {
-  /* -webkit-transform: scaleX(-1);
-  transform: scaleX(-1); */
+  
   display: none;
 }
 
 #stream {
-  /* width: 800px;
-  margin-top: -10px; */
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
-/* #snapshot {
-  display: inline-block;
-  width: 520px;
-  height: 500px;
-} */
+#snapshot {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 .button-group{
   margin-left: 800px;
   margin-top: 300px;
