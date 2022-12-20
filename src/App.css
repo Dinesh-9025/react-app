@@ -43,8 +43,8 @@ body {
 }
 
 #videoElement {
-  /* -webkit-transform: scaleX(-1);
-  transform: scaleX(-1); */
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
   width: 800px;
   height: 800px;
   margin: 20px;
