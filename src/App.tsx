@@ -36,7 +36,7 @@ function App() {
   function stopStreaming() {
     var stream: any = document.querySelector("#stream");
 
-    if (null != cameraStream) {
+    if (cameraStream != null) {
       console.log("stoped")
       var track: any = cameraStream.getTracks()[0];
       track.stop();
