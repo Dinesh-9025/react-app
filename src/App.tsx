@@ -33,48 +33,31 @@ function App() {
 
   // }
 
+  var stream: any = document.querySelector("#stream");
+  var capture: any = document.querySelector("#capture");
+  var snapshot: any = document.querySelector("#snapshot");
 
+  var cameraStream: any = null;
 
-  var btnStart:any = document.getElementById("btn-start");
-  var btnStop:any = document.getElementById("btn-stop");
-  var btnCapture:any = document.getElementById("btn-capture");
-
-  // The stream & capture
-  var stream:any = document.getElementById("stream");
-  var capture:any = document.getElementById("capture");
-  var snapshot:any = document.getElementById("snapshot");
-
-  // The video stream
-  var cameraStream:any = null;
-
-  // Attach listeners
-  btnStart.addEventListener("click", startStreaming);
-  btnStop.addEventListener("click", stopStreaming);
-  btnCapture.addEventListener("click", captureSnapshot);
-
-  // Start Streaming
+ 
   function startStreaming() {
 
     var mediaSupport = 'mediaDevices' in navigator;
-
     if (mediaSupport && null == cameraStream) {
 
-      navigator.mediaDevices.getUserMedia({ video: true })
+      navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         .then(function (mediaStream) {
-
           cameraStream = mediaStream;
-
           stream.srcObject = mediaStream;
-
           stream.play();
+          console.log("camerStream2", cameraStream)
         })
         .catch(function (err) {
-
           console.log("Unable to access camera: " + err);
         });
     }
     else {
-
+      console.log("stoped")
       alert('Your browser does not support media devices.');
 
       return;
@@ -83,11 +66,10 @@ function App() {
 
   // Stop Streaming
   function stopStreaming() {
-
+   
     if (null != cameraStream) {
-
-      var track = cameraStream.getTracks()[0];
-
+      console.log("stoped")
+      var track: any = cameraStream.getTracks()[0];
       track.stop();
       stream.load();
 
@@ -96,11 +78,11 @@ function App() {
   }
 
   function captureSnapshot() {
-
+    
     if (null != cameraStream) {
-
-      var ctx = capture.getContext('2d');
-      var img = new Image();
+      console.log("screen-shot");
+      var ctx: any = capture.getContext('2d');
+      var img: any = new Image();
 
       ctx.drawImage(stream, 0, 0, capture.width, capture.height);
 
@@ -108,18 +90,16 @@ function App() {
       img.width = 240;
 
       snapshot.innerHTML = '';
-
       snapshot.appendChild(img);
     }
   }
 
-
   return (
     <div>
       <div className="button-group">
-        <button id="btn-start" type="button" className="button">Start Streaming</button>
-        <button id="btn-stop" type="button" className="button">Stop Streaming</button>
-        <button id="btn-capture" type="button" className="button">Capture Image</button>
+        <button id='btn-start' onClick={startStreaming} type="button" className="button">Start Streaming</button>
+        <button id='btn-stop' onClick={stopStreaming} type="button" className="button">Stop Streaming</button>
+        <button id='btn-capture' onClick={captureSnapshot} type="button" className="button">Capture Image</button>
       </div>
 
       {/* Video Element & Canvas  */}
