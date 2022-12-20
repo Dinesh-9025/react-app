@@ -115,7 +115,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div>
       <div className="button-group">
         <button id="btn-start" type="button" className="button">Start Streaming</button>
         <button id="btn-stop" type="button" className="button">Stop Streaming</button>
