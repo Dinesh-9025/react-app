@@ -48,8 +48,12 @@ function App() {
       <div>
         <button id="button" onClick={() => StartStreaming()}>Start Video</button>
       </div>
-
+      <div>
+      <button id="btn-stop" type="button" className="button">Stop Streaming</button>
+      <button id="btn-capture" type="button" className="button">Capture Image</button>
     </div>
+
+    </div >
   );
 }
 
