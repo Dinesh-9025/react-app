@@ -1,12 +1,13 @@
-.button-group,
+
 .play-area {
+  margin-top: 100px;
   border: 1px solid grey;
   padding: 1em 1%;
   margin-bottom: 1em;
+  height: 600px;
 }
 
 .button {
-  margin-top: 50px;
   background-color: seagreen;
   color: white;
   border-radius: 3px;
@@ -35,4 +36,8 @@
   display: inline-block;
   width: 320px;
   height: 240px;
+}
+.button-group{
+  margin-left: 800px;
+  margin-top: 100px;
 }

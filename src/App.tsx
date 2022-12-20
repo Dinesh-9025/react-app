@@ -68,11 +68,7 @@ function App() {
 
   return (
     <div>
-      <div className="button-group">
-        <button id='btn-start' onClick={startStreaming} type="button" className="button">Start Streaming</button>
-        <button id='btn-stop' onClick={stopStreaming} type="button" className="button">Stop Streaming</button>
-        <button id='btn-capture' onClick={captureSnapshot} type="button" className="button">Capture Image</button>
-      </div>
+
 
       {/* Video Element & Canvas  */}
       <div className="play-area">
@@ -85,6 +81,12 @@ function App() {
           <canvas id="capture" width="320" height="240"></canvas>
           <div id="snapshot"></div>
         </div>
+      </div>
+
+      <div className="button-group">
+        <button id='btn-start' onClick={startStreaming} type="button" className="button">Start Streaming</button>
+        <button id='btn-stop' onClick={stopStreaming} type="button" className="button">Stop Streaming</button>
+        <button id='btn-capture' onClick={captureSnapshot} type="button" className="button">Capture Image</button>
       </div>
     </div >
   );
