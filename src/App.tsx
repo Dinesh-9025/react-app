@@ -3,40 +3,6 @@ import './App.css';
 
 function App() {
 
-  // const autoPlay: boolean = true
-  // async function StartStreaming() {
-  //   var video: any = document.querySelector("#videoElement")
-  //   var audio: any = document.querySelector("#videoElement")
-
-  //   navigator.mediaDevices.enumerateDevices()
-
-  //   if (navigator.mediaDevices.getUserMedia) {
-
-  //     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-  //       .then(function (stream) {
-  //         console.log("stream", stream);
-  //         sessionStorage.setItem("id", stream.id)
-  //         video.srcObject = stream;
-  //         audio.srcObject = stream;
-  //         video.onloadedmetadata = () => {
-  //           video.play();
-  //         };
-  //       })
-  //       .catch(function (err0r) {
-  //         console.log("Something went wrong!", err0r);
-  //       });
-  //   }
-  // }
-
-  // function stop(e: any) {
-  //   console.log("e", e)
-
-  // }
-
-
-
-
-
   var cameraStream: any = null;
 
 
@@ -58,7 +24,7 @@ function App() {
         });
     }
     else {
-      console.log("stoped")
+      console.log("its on")
       alert('Your browser does not support media devices.');
 
       return;
@@ -68,9 +34,6 @@ function App() {
   // Stop Streaming
   function stopStreaming() {
     var stream: any = document.querySelector("#stream");
-    var capture: any = document.querySelector("#capture");
-    var snapshot: any = document.querySelector("#snapshot");
-
 
     if (null != cameraStream) {
       console.log("stoped")
