@@ -14,21 +14,15 @@
 }
 
 .play-area-sub {
-  /* min-width: max-content; */
-  /* width: 88%; */
-  /* padding: 1em 1%; */
-  /* display: inline-block; */
   text-align: center;
 }
 
 #capture {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
   display: none;
 }
 
 #stream {
-  -webkit-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1, 1);
   transform: scaleX(-1);
 }
 
