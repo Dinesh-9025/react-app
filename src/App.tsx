@@ -54,7 +54,6 @@ function App() {
       var ctx: any = capture.getContext('2d');
       var img: any = new Image();
 
-      ctx.scale(-1, 1)
       ctx.drawImage(stream, 0, 0, capture.width, capture.height);
 
       img.src = capture.toDataURL("image/png");
