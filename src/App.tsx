@@ -60,7 +60,7 @@ function App() {
       ctx.drawImage(stream, 0, 0, capture.width, capture.height);
 
       img.src = capture.toDataURL("image/png");
-      img.width = 280;
+      img.width = 380;
       img.height = 250;
 
       snapshot.innerHTML = '';
@@ -77,7 +77,7 @@ function App() {
         </div>
         <div className="play-area-sub">
           <h3>The Capture</h3>
-          <canvas id="capture" width="1500" height="500"></canvas>
+          <canvas id="capture" width="380" height="250"></canvas>
           <div id="snapshot"></div>
         </div>
       </div>
