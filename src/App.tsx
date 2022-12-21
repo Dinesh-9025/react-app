@@ -18,7 +18,7 @@ function App() {
           setCamerStream(mediaStream)
           stream.srcObject = mediaStream;
           stream.play();
-          
+
         })
         .catch(function (err) {
           console.log("Unable to access camera: " + err);
@@ -83,11 +83,13 @@ function App() {
       </div>
 
       <div className="button-group">
-        <button id='btn-start' onClick={startStreaming} type="button" className="button">Start Streaming</button>
+        {cameraStream == null &&
+          <button id='btn-start' onClick={startStreaming} type="button" className="button">Start Streaming</button>
+          || cameraStream != null &&
+          <button id='btn-capture' onClick={captureSnapshot} type="button" className="button" style={{color:"black"}}>Capture Image</button>
+        }
         <button id='btn-stop' onClick={stopStreaming} type="button" className="button">Stop Streaming</button>
-        {cameraStream != null &&
-          <button id='btn-capture' onClick={captureSnapshot} type="button" className="button">Capture Image</button>
-        }</div>
+      </div>
     </div >
   );
 }
