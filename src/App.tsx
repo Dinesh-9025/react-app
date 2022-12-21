@@ -18,7 +18,7 @@ function App() {
           setCamerStream(mediaStream)
           stream.srcObject = mediaStream;
           stream.play();
-          console.log("camerStream2", cameraStream)
+          
         })
         .catch(function (err) {
           console.log("Unable to access camera: " + err);
@@ -31,7 +31,7 @@ function App() {
       return;
     }
   }
-
+  console.log("camerStream2", cameraStream)
   // Stop Streaming
   function stopStreaming() {
     var stream: any = document.querySelector("#stream");
@@ -60,7 +60,7 @@ function App() {
       ctx.drawImage(stream, 0, 0, capture.width, capture.height);
 
       img.src = capture.toDataURL("image/png");
-      img.width = 480;
+      img.width = 280;
       img.height = 250;
 
       snapshot.innerHTML = '';
