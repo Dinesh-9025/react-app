@@ -17,7 +17,6 @@ function App() {
           setCamerStream(mediaStream)
           stream.srcObject = mediaStream;
           stream.play();
-
         })
         .catch(function (err) {
           console.log("Unable to access camera: " + err);
