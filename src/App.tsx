@@ -13,7 +13,7 @@ function App() {
 
     if (mediaSupport && null == cameraStream) {
       navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: true })
-        .then(function (mediaStream: any) {
+        .then(function (mediaStream) {
           setCamerStream(mediaStream)
           stream.srcObject = mediaStream;
           stream.play();
