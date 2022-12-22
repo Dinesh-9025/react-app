@@ -46,7 +46,7 @@ function App() {
   function captureSnapshot() {
     var stream: any = document.querySelector("#stream");
     var capture: any = document.querySelector("#capture");
-    var snapshot: any = document.querySelector("#");
+    var snapshot: any = document.querySelector("#snapshot");
 
     if (cameraStream != null) {
       console.log("screen-shot");
