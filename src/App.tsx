@@ -4,7 +4,8 @@ import './App.css';
 function App() {
 
   const [cameraStream, setCamerStream] = useState<any>(null)
-  let front: any = false;
+  const [front, setFront] = useState<boolean>(false)
+  // let front: any = false;
 
 
   function startStreaming() {
@@ -68,10 +69,16 @@ function App() {
   function FlipCamera() {
 
     console.log("fliped")
+    // if(front === true){
+
+    // }
+    setFront(!front)
+
+
     var stream: any = document.querySelector("#stream")
     var flip: any = document.querySelector("#btn-flip")
 
-    front = !front
+    // front = !front
   }
 
   return (
