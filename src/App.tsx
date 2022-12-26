@@ -72,11 +72,8 @@ function App() {
     console.log("fliped")
     setFront(!front)
 
-
-    var stream: any = document.querySelector("#stream")
-    var flip: any = document.querySelector("#btn-flip")
-
-    // front = !front
+    // var stream: any = document.querySelector("#stream")
+    // var flip: any = document.querySelector("#btn-flip")
   }
 
   return (
