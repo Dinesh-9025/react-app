@@ -14,7 +14,7 @@ function App() {
     var mediaSupport: any = 'mediaDevices' in navigator;
 
     if (mediaSupport && null == cameraStream) {
-      navigator.mediaDevices.getUserMedia({ video: { facingMode: front ? "user" : "environment" }, audio: true })
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: true })
         .then(function (mediaStream) {
           console.log("mediaStream", mediaStream)
           setCamerStream(mediaStream)
@@ -101,6 +101,23 @@ function App() {
     console.log("fliped")
   }
 
+
+  function BackCamera() {
+
+    var stream: any = document.querySelector("#stream")
+
+
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: true })
+      .then(function (mediaStream) {
+        setCamerStream(mediaStream)
+        stream.srcObject = mediaStream;
+        stream.play();
+      })
+      .catch(function (err) {
+        console.log("Unable to access camera: " + err);
+      });
+  }
+
   return (
     <div>
       <div className="play-area">
@@ -123,7 +140,7 @@ function App() {
         }
         <button id='btn-stop' onClick={stopStreaming} type="button" className="button">Stop Streaming</button>
         <button id='btn-flip' onClick={FrontCamera} type="button" className="button">Front Camera</button>
-        <button id='btn-back' onClick={startStreaming} type="button" className="button">Back Camera</button>
+        <button id='btn-back' onClick={BackCamera} type="button" className="button">Back Camera</button>
       </div>
     </div>
   );
