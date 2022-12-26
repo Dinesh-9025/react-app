@@ -81,7 +81,7 @@ function App() {
 
       setCamerStream(null)
     }
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: true })
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: true })
       .then(function (mediaStream) {
         setCamerStream(mediaStream)
         stream.srcObject = mediaStream;
@@ -112,7 +112,7 @@ function App() {
 
       setCamerStream(null)
     }
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: true })
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: true })
       .then(function (mediaStream) {
         setCamerStream(mediaStream)
         stream.srcObject = mediaStream;
