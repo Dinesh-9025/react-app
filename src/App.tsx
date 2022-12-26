@@ -31,6 +31,7 @@ function App() {
       return;
     }
   }
+  console.log("front-->",front)
 
   function stopStreaming() {
     var stream: any = document.querySelector("#stream");
@@ -69,9 +70,6 @@ function App() {
   function FlipCamera() {
 
     console.log("fliped")
-    // if(front === true){
-
-    // }
     setFront(!front)
 
 
