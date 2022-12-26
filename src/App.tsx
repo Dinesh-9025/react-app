@@ -71,8 +71,6 @@ function App() {
 
   function FrontCamera() {
     var stream: any = document.querySelector("#stream")
-
-    var mediaSupport: any = 'mediaDevices' in navigator;
     var tracks: any = cameraStream.getTracks()
 
     if (cameraStream != null) {
@@ -83,7 +81,7 @@ function App() {
 
       setCamerStream(null)
     }
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: true })
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: true })
       .then(function (mediaStream) {
         setCamerStream(mediaStream)
         stream.srcObject = mediaStream;
