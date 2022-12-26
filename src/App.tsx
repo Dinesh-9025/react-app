@@ -4,6 +4,7 @@ import './App.css';
 function App() {
 
   const [cameraStream, setCamerStream] = useState<any>(null)
+  let front: any = false;
 
 
   function startStreaming() {
@@ -12,7 +13,7 @@ function App() {
     var mediaSupport: any = 'mediaDevices' in navigator;
 
     if (mediaSupport && null == cameraStream) {
-      navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: true })
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: front ? "user" : "environment" }, audio: true })
         .then(function (mediaStream) {
           setCamerStream(mediaStream)
           stream.srcObject = mediaStream;
@@ -64,6 +65,15 @@ function App() {
     }
   }
 
+  function FlipCamera() {
+
+    console.log("fliped")
+    var stream: any = document.querySelector("#stream")
+    var flip: any = document.querySelector("#btn-flip")
+
+    front = !front
+  }
+
   return (
     <div>
       <div className="play-area">
@@ -85,6 +95,7 @@ function App() {
           <button id='btn-capture' onClick={captureSnapshot} type="button" className="button" style={{ color: "black" }}>Capture Image</button>
         }
         <button id='btn-stop' onClick={stopStreaming} type="button" className="button">Stop Streaming</button>
+        <button id='btn-flip' onClick={FlipCamera} type="button" className="button">FlipCamera</button>
       </div>
     </div>
   );
