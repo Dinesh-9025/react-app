@@ -16,6 +16,7 @@ function App() {
     if (mediaSupport && null == cameraStream) {
       navigator.mediaDevices.getUserMedia({ video: { facingMode: front ? "user" : "environment" }, audio: true })
         .then(function (mediaStream) {
+          console.log("mediaStream", mediaStream)
           setCamerStream(mediaStream)
           stream.srcObject = mediaStream;
           stream.play();
@@ -31,7 +32,7 @@ function App() {
       return;
     }
   }
-  console.log("front-->",front)
+  console.log("front-->", front)
 
   function stopStreaming() {
     var stream: any = document.querySelector("#stream");
@@ -68,12 +69,18 @@ function App() {
   }
 
   function FlipCamera() {
-
-    console.log("fliped")
+    var stream: any = document.querySelector("#stream")
+    var flip: any = document.querySelector("#btn-flip")
     setFront(!front)
+    var tracks: any = cameraStream.getTracks()
+    var track: any = cameraStream.getTracks()[0];
+    track.stop();
+    stream.load();
 
-    // var stream: any = document.querySelector("#stream")
-    // var flip: any = document.querySelector("#btn-flip")
+    tracks.forEach((track: any) => {
+      console.log(track.getSettings().deviceId);
+    });
+    console.log("fliped")
   }
 
   return (
