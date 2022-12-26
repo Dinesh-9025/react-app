@@ -72,6 +72,8 @@ function App() {
     var stream: any = document.querySelector("#stream")
     var flip: any = document.querySelector("#btn-flip")
     setFront(!front)
+
+    var mediaSupport: any = 'mediaDevices' in navigator;
     var tracks: any = cameraStream.getTracks()
     var track: any = cameraStream.getTracks()[0];
     track.stop();
@@ -80,6 +82,26 @@ function App() {
     tracks.forEach((track: any) => {
       console.log(track.getSettings().deviceId);
     });
+
+    if (mediaSupport && null == cameraStream) {
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: true })
+        .then(function (mediaStream) {
+          console.log("mediaStream", mediaStream)
+          setCamerStream(mediaStream)
+          stream.srcObject = mediaStream;
+          stream.play();
+        })
+        .catch(function (err) {
+          console.log("Unable to access camera: " + err);
+        });
+    }
+    else {
+      console.log("its on")
+      alert('Your browser does not support media devices.');
+
+      return;
+    }
+
     console.log("fliped")
   }
 
