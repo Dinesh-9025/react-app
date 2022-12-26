@@ -106,7 +106,14 @@ function App() {
 
     var stream: any = document.querySelector("#stream")
 
+    if (cameraStream != null) {
+      console.log("stoped")
+      var track: any = cameraStream.getTracks()[0];
+      track.stop();
+      stream.load();
 
+      setCamerStream(null)
+    }
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: true })
       .then(function (mediaStream) {
         setCamerStream(mediaStream)
